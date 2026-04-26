@@ -18,7 +18,7 @@ const Posts = () => {
   // 조회
   const readData = async () => {
     const { data, error } = await supabase
-      .from("Test")
+      .from("2026-04-26-Test")
       .select("*")
       .order("created_at", { ascending: false });
 

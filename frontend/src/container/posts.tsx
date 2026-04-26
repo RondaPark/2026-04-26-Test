@@ -15,7 +15,7 @@ const Posts = () => {
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editingText, setEditingText] = useState("");
 
-  // 조회
+  // 조회 기능
   const readData = async () => {
     const { data, error } = await supabase
       .from("2026-04-26-Test")

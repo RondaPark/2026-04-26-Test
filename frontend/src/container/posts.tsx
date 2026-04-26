@@ -18,7 +18,7 @@ const Posts = () => {
   // 조회
   const readData = async () => {
     const { data, error } = await supabase
-      .from("posts")
+      .from("Test")
       .select("*")
       .order("created_at", { ascending: false });
 
@@ -30,7 +30,7 @@ const Posts = () => {
   const createData = async () => {
     if (!inputText.trim()) return;
     const { error } = await supabase
-      .from("posts")
+      .from("2026-04-26-Test")
       .insert([{ content: inputText }]);
 
     if (error) console.error("추가 실패:", error.message);
@@ -43,7 +43,7 @@ const Posts = () => {
   // 수정
   const updateData = async (id: number) => {
     const { error } = await supabase
-      .from("posts")
+      .from("2026-04-26-Test")
       .update({ content: editingText })
       .eq("id", id);
 
@@ -57,7 +57,7 @@ const Posts = () => {
 
   // 삭제
   const deleteData = async (id: number) => {
-    const { error } = await supabase.from("posts").delete().eq("id", id);
+    const { error } = await supabase.from("2026-04-26-Test").delete().eq("id", id);
 
     if (error) console.error("삭제 실패:", error.message);
     else readData();
